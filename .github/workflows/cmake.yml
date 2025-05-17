@@ -3,16 +3,16 @@ name: CMake
 on:
   workflow_run:
     workflows: [tests]
-    branches: [main]
     types: [completed]
+  workflow_dispatch:
   push:
     paths:
       - 'protocols/**'
-    branches: [ "main" ]
+    branches: [main]
   pull_request:
     paths:
       - 'protocols/**'
-    branches: [ "main" ]
+    branches: [main]
 
 env:
   # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
