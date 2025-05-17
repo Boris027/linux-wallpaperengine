@@ -1,18 +1,16 @@
 name: CMake
 
 on:
+  workflow_run:
+    workflows: [tests]
+    branches: [main]
+    types: [completed]
   push:
     paths:
-      - 'src/**'
-      - 'CMakeModules/**'
-      - CMakeLists.txt
       - 'protocols/**'
     branches: [ "main" ]
   pull_request:
     paths:
-      - 'src/**'
-      - 'CMakeModules/**'
-      - CMakeLists.txt
       - 'protocols/**'
     branches: [ "main" ]
 
